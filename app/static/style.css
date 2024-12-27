@@ -3,8 +3,33 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    color: #333;
 }
 
+h2{
+    color: #4CAF50;
+    text-align: center;
+}
+p, a{
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    margin: 5px 0; 
+}
+a{
+    text-decoration: none;
+    color: #aa0000;
+}
+a:hover{
+    text-decoration: underline;
+}
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+li {
+    font-size: 18px;
+}
 header {
     background-color: #4CAF50;
     color: white;
@@ -14,4 +39,28 @@ header {
 
 main {
     padding: 1rem;
+    text-align: center;
 }
+a {
+    color: #007BFF;
+    text-decoration: none;
+    margin: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #001488;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #FF2C1A;
+}
+

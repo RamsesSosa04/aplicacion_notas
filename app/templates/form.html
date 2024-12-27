@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Agregar Nota</h2>
-<form action="/add" method="post">
-    <label for="title">Título:</label>
-    <input type="text" id="title" name="title">
-    <label for="content">Contenido:</label>
-    <textarea id="content" name="content"></textarea>
-    <button type="submit">Guardar</button>
+<h2>{{ accion }} Nota</h2>
+
+<form method="post">
+    <label for="nota">Nota:</label>
+    <input type="text" name="nota" id="nota" value="{{ nota | default('') }}" required>
+    <button type="submit">{{ accion }}</button>
 </form>
+
+<a href="{{ url_for('routes.notes') }}">Cancelar</a>
 {% endblock %}
