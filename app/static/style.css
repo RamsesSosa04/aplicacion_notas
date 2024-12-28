@@ -69,7 +69,7 @@ ul li {
 button, a.button {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #4CAF50;
+    background-color: #007504;
     color: white;
     text-decoration: none;
     border: none;
@@ -79,7 +79,7 @@ button, a.button {
 }
 
 button:hover, a.button:hover {
-    background-color: #45a049;
+    background-color: #007504;
 }
 
 button.delete {
