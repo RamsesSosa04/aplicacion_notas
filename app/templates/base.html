@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación de Notas</title>
+    <title>{% block title %}Aplicación de Notas{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
-        <h1>Aplicación de Notas</h1>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <nav>
+            <a href="{{ url_for('routes.index') }}">Inicio</a>
+            <a href="{{ url_for('routes.notes') }}">Mis Notas</a>
+            <a href="{{ url_for('routes.deleted_notes') }}">Notas Eliminadas</a>
+        </nav>
     </header>
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </main>
 </body>
 </html>

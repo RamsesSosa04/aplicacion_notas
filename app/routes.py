@@ -9,7 +9,7 @@ notas_eliminadas = []
 @routes.route('/')
 def index():
     """Página de inicio"""
-    return render_template('index.html')  # Asegúrate de que index.html exista en templates/
+    return render_template('index.html') 
 
 
 @routes.route('/notes')

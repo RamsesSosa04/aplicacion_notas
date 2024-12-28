@@ -2,23 +2,21 @@
 
 {% block content %}
 <h2>Notas Eliminadas</h2>
-
 {% if notas_eliminadas %}
 <ul>
     {% for nota in notas_eliminadas %}
     <li>
         {{ nota }}
-        <!-- Formulario para recuperar una nota -->
         <form method="post" action="{{ url_for('routes.deleted_notes') }}" style="display:inline;">
             <input type="hidden" name="id" value="{{ loop.index0 }}">
-            <button type="submit">Recuperar</button>
+            <button type="submit" class="button">Recuperar</button>
         </form>
     </li>
     {% endfor %}
 </ul>
+<a class="button" href="{{ url_for('routes.notes') }}">Volver a Mis Notas</a>
 {% else %}
-<p>No hay notas eliminadas.</p>
+<p class="empty-message">No hay notas eliminadas.</p>
+<a class="button" href="{{ url_for('routes.notes') }}">Volver a Mis Notas</a>
 {% endif %}
-
-<a href="{{ url_for('routes.notes') }}">Volver a Mis Notas</a>
 {% endblock %}

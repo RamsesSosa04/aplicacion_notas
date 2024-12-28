@@ -2,22 +2,23 @@
 
 {% block content %}
 <h2>Mis Notas</h2>
-
 {% if notas %}
 <ul>
     {% for nota in notas %}
     <li>
         {{ nota }}
-        <!-- Formulario para eliminar una nota -->
-        <form method="post" action="{{ url_for('routes.delete_note', id=loop.index0) }}" style="display:inline;">
-            <button type="submit">Eliminar</button>
-        </form>
+        <div>
+            <a class="button" href="{{ url_for('routes.edit_note', id=loop.index0) }}">Editar</a>
+            <form method="post" action="{{ url_for('routes.delete_note', id=loop.index0) }}" style="display:inline;">
+                <button type="submit" class="delete">Eliminar</button>
+            </form>
+        </div>
     </li>
     {% endfor %}
 </ul>
+<a class="button" href="{{ url_for('routes.new_note') }}">Agregar nueva nota</a>
 {% else %}
-<p>No hay notas disponibles.</p>
+<p class="empty-message">No tienes notas. ¡Crea una nueva!</p>
+<a class="button" href="{{ url_for('routes.new_note') }}">Agregar nueva nota</a>
 {% endif %}
-
-<a href="{{ url_for('routes.new_note') }}">Agregar nueva nota</a>
 {% endblock %}
