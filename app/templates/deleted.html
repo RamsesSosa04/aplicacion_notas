@@ -1,7 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Notas eliminadas</h2>
-<p>No tienes notas eliminadas recientemente.</p>
-<a href="/">Volver a la página principal</a>
+<h2>Notas Eliminadas</h2>
+
+{% if notas_eliminadas %}
+<ul>
+    {% for nota in notas_eliminadas %}
+    <li>
+        {{ nota }}
+        <!-- Formulario para recuperar una nota -->
+        <form method="post" action="{{ url_for('routes.deleted_notes') }}" style="display:inline;">
+            <input type="hidden" name="id" value="{{ loop.index0 }}">
+            <button type="submit">Recuperar</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay notas eliminadas.</p>
+{% endif %}
+
+<a href="{{ url_for('routes.notes') }}">Volver a Mis Notas</a>
 {% endblock %}
