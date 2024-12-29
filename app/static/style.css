@@ -79,7 +79,7 @@ button, a.button {
 }
 
 button:hover, a.button:hover {
-    background-color: #007504;
+    background-color: #004d03;
 }
 
 button.delete {
@@ -87,17 +87,13 @@ button.delete {
 }
 
 button.delete:hover {
-    background-color: #e53935;
+    background-color: #e53937;
 }
 
 /* Links */
 a {
     color: #4CAF50;
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 /* Empty Notes Message */
